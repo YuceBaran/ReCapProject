@@ -9,11 +9,11 @@ using System.Collections.Generic;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal : EfEntityRepositoryBase<Car, NorthwindContext>, ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, RecapContext>, ICarDal
     {
         public List<CarDetailDto> GetCarDetails()
         {
-            using (NorthwindContext context = new NorthwindContext())
+            using (RecapContext context = new RecapContext())
             {
                 var result = from c in context.Cars
                              join b in context.Brands

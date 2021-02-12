@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework.EfBrand
 {
-    public class EfBrandDal : EfEntityRepositoryBase<Brand, NorthwindContext>,IBrandDal
+    public class EfBrandDal : EfEntityRepositoryBase<Brand, RecapContext>,IBrandDal
     {
         
     }

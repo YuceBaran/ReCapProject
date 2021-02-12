@@ -6,11 +6,11 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class NorthwindContext : DbContext
+    public class RecapContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"server=(LocalDb)\MSSQLLocalDb;Database=Northwind;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"server=(LocalDb)\MSSQLLocalDb;Database=Recap;Trusted_Connection=true");
             base.OnConfiguring(optionsBuilder);
         }
 
