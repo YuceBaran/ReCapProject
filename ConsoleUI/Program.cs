@@ -10,7 +10,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //CarTest();
+            CarTest();
             //BrandTest();
             //ColorTest();
         }
@@ -22,9 +22,13 @@ namespace ConsoleUI
             var result = carManager.GetCarDetails();
             if (result.Success == true)
             {
+                int i = 0;
+
                 foreach (var car in result.Data)
                 {
-                    Console.WriteLine(car.Id + "/" + car.BrandName + "/" + car.ColorName + "/" + car.DailyPrice);
+                    i++;
+                    Console.WriteLine($"{i} . Araç Bilgileri =>  Araç Id : {car.Id} Araç : {car.BrandName} {car.Descriptions}  Araç Rengi : {car.ColorName} Araç Fiyatı : {car.DailyPrice}");
+                    Console.WriteLine("-----------------------------------------");
                 }
             }
             else
