@@ -1,7 +1,7 @@
 ﻿using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using Entities.DTOs;
+using Entities.Dtos;
 using System;
 using System.Text;
 using System.Linq;
@@ -9,11 +9,11 @@ using System.Collections.Generic;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal : EfEntityRepositoryBase<Car, RecapContext>, ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, ReCapContext>, ICarDal
     {
         public List<CarDetailDto> GetCarDetails()
         {
-            using (RecapContext context = new RecapContext())
+            using (ReCapContext context = new ReCapContext())
             {
                 var result = from c in context.Cars
                              join b in context.Brands
@@ -31,8 +31,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  Descriptions = c.Description,
                                  ModelYear = c.ModelYear
                              };
-                var reslt = result.ToList();
-                return reslt;
+                
+                return result.ToList();
 
             }
         }
